@@ -30,7 +30,7 @@ CONF_HOME = os.path.expanduser('~/.' + CONF_FILENAME)
 class PigshareConfig(object):
 
     def __init__(self):
-        self.config = ConfigParser.SafeConfigParser({'token': None, 'url': FIGSHARE_BASE_URL, 'institution': None, 'stats_token': None})
+        self.config = ConfigParser({'token': None, 'url': FIGSHARE_BASE_URL, 'institution': None, 'stats_token': None})
 
         try:
             user = os.environ['SUDO_USER']
