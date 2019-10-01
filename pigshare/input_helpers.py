@@ -10,8 +10,8 @@ def create_custom_fields():
 
     result = {}
 
-    print "Enter custom field key/value pairs. Once finished, press enter when asked for a key."
-    print
+    print("Enter custom field key/value pairs. Once finished, press enter when asked for a key.")
+    print()
 
     while True:
         key = raw_input(" - custom field key (String): ")
@@ -25,7 +25,7 @@ def create_custom_fields():
         value = raw_input(
             " - custom field value for key '{}' (String)': ".format(key))
         while not value:
-            print "Value can't be empty."
+            print("Value can't be empty.")
             value = raw_input(
                 " - custom field value for key '{}' (String)': ".format(key))
 
@@ -63,25 +63,25 @@ def create_author(id_or_name=None):
 
 def title_help(*args):
 
-    print "The title for the article."
+    print("The title for the article.")
 
 
 def defined_type_help(*args):
 
-    print "Article type, one of:"
-    print
+    print("Article type, one of:")
+    print()
     for k, v in FIGSHARE_DEFINED_TYPES_DICT.iteritems():
-        print v
+        print(v)
 
-    print
+    print()
 
 
 def author_help(*args):
 
-    print "If possible, use the authors id instead of name, that way all articles belonging to the same author are guaranteed to end up associated with the same entity in Figshare."
-    print
-    print "Following is a list of cached names and associated ids. This list is not complete and just used as a workaround because the Figshare API does not allow querying authors directly."
-    print
+    print("If possible, use the authors id instead of name, that way all articles belonging to the same author are guaranteed to end up associated with the same entity in Figshare.")
+    print()
+    print("Following is a list of cached names and associated ids. This list is not complete and just used as a workaround because the Figshare API does not allow querying authors directly.")
+    print()
 
     for id, name in caching.get_authors().iteritems():
         if args:
@@ -93,7 +93,7 @@ def author_help(*args):
                 if filter not in name:
                     continue
 
-        print "{} - {}".format(id, name)
+        print("{} - {}".format(id, name))
 
 
 def create_categories_help_func(api):
@@ -118,7 +118,7 @@ def create_categories_help_func(api):
                     if filter not in c['title']:
                         continue
 
-            print "{}. {}".format(c['id'], c['title'])
+            print("{}. {}".format(c['id'], c['title']))
 
     return categories_help
 
@@ -143,7 +143,7 @@ def create_licenses_help_func(api):
                     if filter not in c['title']:
                         continue
 
-            print "{}. {} ({})".format(c.value, c.name, c.url)
+            print("{}. {} ({})".format(c.value, c.name, c.url))
 
     return licenses_help
 
@@ -159,14 +159,14 @@ def create_articles_help_func(api):
             articles = api.call_list_articles()
 
         for a in articles:
-            print u"{} - {}".format(a.id, a.title)
+            print(u"{} - {}".format(a.id, a.title))
 
     return articles_help
 
 
 def custom_fields_help():
 
-    print "Custom metadata fields."
+    print("Custom metadata fields.")
 
 
 def create_article_help_map(api):

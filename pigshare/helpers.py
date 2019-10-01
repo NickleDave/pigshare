@@ -6,7 +6,7 @@ def create_models(cls, response):
     json = response.json()
 
     if len(json) >= 1000:
-        print "Max number of results, try to filter."
+        print("Max number of results, try to filter.")
 
     models = []
 
@@ -19,13 +19,13 @@ def create_models(cls, response):
 
 def print_item(model):
 
-    print model
+    print(model)
 
 
 def print_items(models):
 
     for m in models:
-        print m
+        print(m)
 
 
 def create_model(cls, response):
