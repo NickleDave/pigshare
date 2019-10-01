@@ -1,7 +1,7 @@
 from booby import Model, fields
 from booby.validators import nullable
 import json
-from helpers import *
+from .helpers import *
 
 FIGSHARE_BASE_URL = 'https://api.figshare.com/v2'
 # types:
