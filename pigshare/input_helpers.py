@@ -1,6 +1,6 @@
-from models import *
+from .models import *
 from pyclist.model_helpers import ask_details_for_type, MODEL_MAP, parse_for_help, edit_details_for_type
-import caching
+from . import caching
 import booby
 
 CATEGORIES_CACHE = {}
