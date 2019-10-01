@@ -1,10 +1,10 @@
-from models import *
+from .models import *
 from restkit import Resource, request
 import inspect
 import hashlib
 import os
-import caching
-from input_helpers import create_article, create_collection, edit_article, edit_collection
+from . import caching
+from .input_helpers import create_article, create_collection, edit_article, edit_collection
 try:
     import simplejson as json
 except ImportError:
