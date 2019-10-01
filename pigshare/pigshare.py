@@ -1,7 +1,7 @@
 # PYTHON_ARGCOMPLETE_OK
 
 from signal import signal, SIGPIPE, SIG_DFL
-import caching
+from . import caching
 import sys
 
 # Ignore SIG_PIPE and don't throw exceptions on it...
@@ -9,17 +9,17 @@ import sys
 signal(SIGPIPE, SIG_DFL)
 
 
-from api import figshare_api
-from stats_api import figshare_stats_api as stats_api
-from stats_api import STATS_API_ID_ARG_MAP
-from api import API_ARG_MAP
+from .api import figshare_api
+from .stats_api import figshare_stats_api as stats_api
+from .stats_api import STATS_API_ID_ARG_MAP
+from .api import API_ARG_MAP
 
 import os
-import ConfigParser
+from configparser import ConfigParser
 import logging
-from models import *
-from api import FIGSHARE_BASE_URL
-from input_helpers import create_article
+from .models import *
+from .api import FIGSHARE_BASE_URL
+from .input_helpers import create_article
 
 from pyclist.pyclist import pyclist
 
